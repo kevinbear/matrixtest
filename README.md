@@ -29,9 +29,15 @@
 	{
 		for (j = 0; j<Square; j++)
 		{
-			for(k=0;k<Square;k++)
+			for (k = 0; k<Square; k++)
 			{
-				C[i][j]=A[i][k]*B[k][j];
+				M= A[i][k] * B[k][j];
+				acc += M;
+				if (k == Square - 1)
+				{
+					C[i][j] = acc;
+					acc = 0;
+				}
 			}
 		}
 	}
