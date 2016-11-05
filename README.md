@@ -5,23 +5,27 @@
 #include <stdlib.h>
 #include <time.h>
 #define Square 5
+#pragma warning (disable:4996)
+int main()
 {
-	int A[Square][Square]={{1,2,3,4,5},
-						             {1,2,3,4,5},
-						             {1,2,3,4,5},
-						             {1,2,3,4,5},
-						             {1,2,3,4,5}};
-	int B[Square][Square]={{1,0,0,0,0},
-						             {0,1,0,0,0},
-						             {0,0,1,0,0},
-						             {0,0,0,1,0},
-						             {0,0,0,0,1}};
-	int C[Square][Square]={{0,0,0,0,0},
-						             {0,0,0,0,0},
-						             {0,0,0,0,0},
-						             {0,0,0,0,0},
-						             {0,0,0,0,0}};
-	int i, j, k;
+	int A[Square][Square] = { { 1, 2, 3, 4, 5 },
+							  { 1, 2, 3, 4, 5 },
+							  { 1, 2, 3, 4, 5 },
+							  { 1, 2, 3, 4, 5 },
+							  { 1, 2, 3, 4, 5 } };
+
+	int B[Square][Square] = { { 1, 0, 0, 0, 0 },
+							  { 0, 1, 0, 0, 0 },
+							  { 0, 0, 1, 0, 0 },
+							  { 0, 0, 0, 1, 0 },
+							  { 0, 0, 0, 0, 1 } };
+
+	int C[Square][Square] = { { 0, 0, 0, 0, 0 },
+							  { 0, 0, 0, 0, 0 },
+							  { 0, 0, 0, 0, 0 },
+							  { 0, 0, 0, 0, 0 },
+							  { 0, 0, 0, 0, 0 } };
+	int i, j, k,M=0,acc=0;
 	FILE*fp;
 	fp = fopen("martix.txt", "w+");
 	/*----------times test----------*/
@@ -49,8 +53,8 @@
 		for (j = 0; j<Square; j++)
 		{
 			fprintf(fp, "%d\t", A[i][j]);
-			if (j == Square-1)
-				fprintf(fp,"\n");
+			if (j == Square - 1)
+				fprintf(fp, "\n");
 		}
 	}
 	fprintf(fp, "\n");
@@ -62,7 +66,7 @@
 		for (j = 0; j<Square; j++)
 		{
 			fprintf(fp, "%d\t", B[i][j]);
-			if (j ==Square-1)
+			if (j == Square - 1)
 				fprintf(fp, "\n");
 		}
 	}
@@ -75,7 +79,7 @@
 		for (j = 0; j<Square; j++)
 		{
 			fprintf(fp, "%d\t", C[i][j]);
-			if (j ==Square-1)
+			if (j == Square - 1)
 				fprintf(fp, "\n");
 		}
 	}
